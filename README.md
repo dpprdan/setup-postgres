@@ -6,7 +6,7 @@ The missing action for Postgres :tada:
 - Works on Linux, Mac, and Windows
 - Supports different versions
 
-[![Build Status](https://github.com/ankane/setup-postgres/workflows/build/badge.svg?branch=v1)](https://github.com/ankane/setup-postgres/actions)
+[![Build Status](https://github.com/ankane/setup-postgres/actions/workflows/build.yml/badge.svg)](https://github.com/ankane/setup-postgres/actions)
 
 ## Getting Started
 
