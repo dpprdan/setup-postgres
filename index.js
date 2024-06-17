@@ -60,7 +60,7 @@ host    all             all             ::1/128                 md5
   execSync(`echo "${contents}" | sudo tee ${dir}/pg_hba.conf`);
 }
 
-const defaultVersion = 14;
+const defaultVersion = process.env['ImageOS'] == 'ubuntu24' ? 16 : 14;
 const postgresVersion = parseFloat(process.env['INPUT_POSTGRES-VERSION'] || defaultVersion);
 if (![17, 16, 15, 14, 13, 12, 11, 10, 9.6].includes(postgresVersion)) {
   throw `Postgres version not supported: ${postgresVersion}`;
@@ -114,9 +114,9 @@ if (isMac()) {
     run(`echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg${snapshot} main${suffix}" | sudo tee /etc/apt/sources.list.d/pgdg.list`);
   }
 
-  if (postgresVersion != 14) {
+  if (postgresVersion != defaultVersion) {
     // remove previous cluster so port 5432 is used
-    run(`sudo pg_dropcluster 14 main`);
+    run(`sudo pg_dropcluster ${defaultVersion} main`);
 
     // install new version
     run(`sudo apt-get update -o Dir::Etc::sourcelist="sources.list.d/pgdg.list" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0"`);
