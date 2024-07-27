@@ -62,7 +62,7 @@ host    all             all             ::1/128                 md5
 
 const defaultVersion = process.env['ImageOS'] == 'ubuntu24' ? 16 : 14;
 const postgresVersion = parseFloat(process.env['INPUT_POSTGRES-VERSION'] || defaultVersion);
-if (![17, 16, 15, 14, 13, 12, 11, 10, 9.6].includes(postgresVersion)) {
+if (![18, 17, 16, 15, 14, 13, 12, 11, 10, 9.6].includes(postgresVersion)) {
   throw `Postgres version not supported: ${postgresVersion}`;
 }
 
