@@ -33,7 +33,8 @@ Version | `17` | `16` | `15` | `14` | `13` | `12`
 Ubuntu 24.04 | ✓ | default | ✓ | ✓ | ✓ | ✓
 Ubuntu (rest) | ✓ | ✓ | ✓ | default | ✓ | ✓
 Mac | ✓ | ✓ | ✓ | default | ✓ | ✓
-Windows | | | | default | | |
+Windows 2025 | default | | | | | |
+Windows (rest) | | | | default | | |
 
 Test against multiple versions
 
