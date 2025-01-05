@@ -103,15 +103,16 @@ if (isMac()) {
   // start
   run(`${bin}/pg_ctl -w -D ${dataDir} start`);
 } else if (isWindows()) {
-  if (postgresVersion != 14) {
+  const supportedVersion = process.env['ImageOS'] == 'win25' ? 17 : 14;
+  if (postgresVersion != supportedVersion) {
     throw `Postgres version not supported on Windows: ${postgresVersion}`;
   }
 
   setConfig(process.env.PGDATA);
 
   // start
-  run(`sc config postgresql-x64-14 start=auto`);
-  run(`net start postgresql-x64-14`);
+  run(`sc config postgresql-x64-${supportedVersion} start=auto`);
+  run(`net start postgresql-x64-${supportedVersion}`);
 
   bin = process.env.PGBIN;
 } else {

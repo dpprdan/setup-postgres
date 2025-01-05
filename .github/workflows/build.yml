@@ -9,6 +9,8 @@ jobs:
         os: [ubuntu-24.04, ubuntu-22.04, ubuntu-20.04, macos-15, macos-14, macos-13]
         postgres-version: [17, 16, 15, 14, 13]
         include:
+          - os: windows-2025
+            postgres-version: 17
           - os: windows-2022
             postgres-version: 14
           - os: windows-2019
