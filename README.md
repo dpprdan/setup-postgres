@@ -28,13 +28,13 @@ Specify a version
 
 Currently supports
 
-Version | `17` | `16` | `15` | `14` | `13` | `12`
---- | --- | --- | --- | --- | --- | ---
-Ubuntu 24.04 | ✓ | default | ✓ | ✓ | ✓ | ✓
-Ubuntu (rest) | ✓ | ✓ | ✓ | default | ✓ | ✓
-Mac | ✓ | ✓ | ✓ | default | ✓ | ✓
-Windows 2025 | default | | | | | |
-Windows (rest) | | | | default | | |
+Version | `17` | `16` | `15` | `14` | `13`
+--- | --- | --- | --- | --- | ---
+Ubuntu 24.04 | ✓ | default | ✓ | ✓ | ✓
+Ubuntu (rest) | ✓ | ✓ | ✓ | default | ✓
+Mac | ✓ | ✓ | ✓ | default | ✓
+Windows 2025 | default | | | | |
+Windows (rest) | | | | default | |
 
 Test against multiple versions
 
