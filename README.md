@@ -32,7 +32,7 @@ Version | `17` | `16` | `15` | `14` | `13`
 --- | --- | --- | --- | --- | ---
 Ubuntu 24.04 | ✓ | default | ✓ | ✓ | ✓
 Ubuntu (rest) | ✓ | ✓ | ✓ | default | ✓
-Mac | ✓ | ✓ | ✓ | default | ✓
+Mac | default | ✓ | ✓ | ✓ | ✓
 Windows 2025 | default | | | | |
 Windows (rest) | | | | default | |
 

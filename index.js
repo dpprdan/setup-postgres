@@ -68,7 +68,17 @@ function formulaPresent(formula) {
   return fs.existsSync(`${tap}/Formula/${formula[0]}/${formula}.rb`) || fs.existsSync(`${tap}/Aliases/${formula}`);
 }
 
-const defaultVersion = process.env['ImageOS'] == 'ubuntu24' ? 16 : 14;
+function getDefaultVersion() {
+  if (isMac() || process.env['ImageOS'] == 'win25') {
+    return 17;
+  } else if (process.env['ImageOS'] == 'ubuntu24') {
+    return 16;
+  } else {
+    return 14;
+  }
+}
+
+const defaultVersion = getDefaultVersion();
 const postgresVersion = parseFloat(process.env['INPUT_POSTGRES-VERSION'] || defaultVersion);
 if (![18, 17, 16, 15, 14, 13, 12, 11, 10, 9.6].includes(postgresVersion)) {
   throw `Postgres version not supported: ${postgresVersion}`;
